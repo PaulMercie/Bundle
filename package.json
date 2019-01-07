@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "webpack": "^4.28.3"
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
