@@ -1,20 +1,30 @@
+// Ajout des plugins après le telechargement
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-    mode: 'development',
+    // mode: 'development',
+    // Permet de génerer les sourcesmap
+    devtool: 'source-map',
     entry: './src/index.js',
     output:
     {
-        filename: 'bundle.js',
+        // Ajout de [hash] dans le filename pour le cache breaker
+        filename: 'bundle.[hash].js',
         // Librairie qui permet de générer les chemins pour tous les ordis
         path: path.resolve(__dirname, '../dist')
     },
-    // Recreer le fichier html dans le dossier dist
     plugins:
     [
+        // Supprimer le nouveaux fichier hash js créer à chaque fois automatiquement dans le dossier dist
+        new CleanWebpackPlugin(
+            [ 'dist' ],
+            { root: path.resolve(__dirname, '..') }
+        ),
+        // Recreer le fichier html dans le dossier dist
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/index.html') 
+            template: path.resolve(__dirname, '../src/index.html')
         })
     ],
     module:

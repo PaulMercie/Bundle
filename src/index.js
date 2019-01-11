@@ -3,6 +3,8 @@ import './css/style.css'
 import imageSource from './images/image.jpg'
 import Carousel from './js/Carousel.js'
 
+console.log("Hello Hetic")
+
 // Changement de la source de l'image
 const image = new Image()
 image.src = imageSource
