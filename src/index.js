@@ -1,5 +1,5 @@
 // Import de tous les différents dossiers/fichiers 
-import './css/style.css'
+import './css/style.styl'
 import imageSource from './images/image.jpg'
 import Carousel from './js/Carousel.js'
 

@@ -30,6 +30,15 @@ module.exports = webpackMerge(
                         MiniCssExtractPlugin.loader,
                         'css-loader'
                     ]
+                },
+                {
+                    test: /\.styl$/,
+                    use:
+                    [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        'stylus-loader'
+                    ]
                 }
             ]
         }
