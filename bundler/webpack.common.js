@@ -40,14 +40,6 @@ module.exports = {
                 ]
             },
             {
-                test: /\.css$/,
-                use:
-                [
-                    'style-loader',
-                    'css-loader'
-                ]
-            },
-            {
                 // Sélectionne tous les fichiers qui se finissent par ces infos (Regex)
                 test: /\.(jpg|png|svg|gif)$/,
                 // Utilise le loader installé sur tous les fichiers séléctionnés

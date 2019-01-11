@@ -18,6 +18,20 @@ module.exports = webpackMerge(
             contentBase: './dist',
             open: true,
             hot: true
+        },
+        module:
+        {
+            rules:
+            [
+                {
+                    test: /\.css$/,
+                    use:
+                    [
+                        'style-loader',
+                        'css-loader'
+                    ]
+                }
+            ]
         }
     }
 )
