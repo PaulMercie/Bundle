@@ -1,6 +1,7 @@
 // Ajout des plugins après le telechargement
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     // Permet de génerer les sourcesmap
@@ -22,6 +23,8 @@ module.exports = {
     },
     plugins:
     [
+        // Plugin Static Files (Prend les fichiers dans static et les mets à disposition) --> ex Robot.txt
+        new CopyWebpackPlugin([ { from: 'static' } ]),
         // Recreer le fichier html dans le dossier dist
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../src/index.html')
