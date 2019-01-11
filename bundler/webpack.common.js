@@ -1,11 +1,8 @@
 // Ajout des plugins après le telechargement
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const webpack = require('webpack')
 
 module.exports = {
-    // mode: 'development',
     // Permet de génerer les sourcesmap
     devtool: 'source-map',
     // Initialisation serveur dev webpack
@@ -25,13 +22,6 @@ module.exports = {
     },
     plugins:
     [
-        // Plugin Hot Reload
-        new webpack.HotModuleReplacementPlugin(),
-        // Supprimer le nouveaux fichier hash js créer à chaque fois automatiquement dans le dossier dist
-        new CleanWebpackPlugin(
-            [ 'dist' ],
-            { root: path.resolve(__dirname, '..') }
-        ),
         // Recreer le fichier html dans le dossier dist
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../src/index.html')

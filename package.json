@@ -16,12 +16,13 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1"
   },
   "scripts": {
-    "build": "webpack --config ./bundler/webpack.config.js",
-    "serv": "webpack-dev-server --config ./bundler/webpack.config.js",
-    "watch": "webpack --watch --config ./bundler/webpack.config.js"
+    "build": "webpack --config ./bundler/webpack.prod.js",
+    "serv": "webpack-dev-server --config ./bundler/webpack.dev.js",
+    "watch": "webpack --watch --config ./bundler/webpack.prod.js"
   },
   "repository": {
     "type": "git",
