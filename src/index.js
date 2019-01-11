@@ -11,3 +11,16 @@ image.src = imageSource
 document.body.appendChild(image)
 
 const carousel = new Carousel()
+
+// Hot Reload
+if(module.hot)
+{
+    module.hot.accept()
+
+    module.hot.dispose(() =>
+    {
+        console.log('dispose')
+        // Enlever l'image lors du hot reload
+        document.body.removeChild(image)
+    })
+}
